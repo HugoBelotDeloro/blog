@@ -6,7 +6,9 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      buildInputs = with pkgs; [ ];
+      buildInputs = with pkgs; [
+        nodejs
+      ];
     in {
       devShells.${system}.default = pkgs.mkShell { inherit buildInputs; };
 

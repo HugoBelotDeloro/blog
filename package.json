@@ -1,0 +1,17 @@
+{
+  "name": "iridescent-blog",
+  "version": "1.0.0",
+  "description": "Hugo Belot-Deloro's blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "author": "Hugo Belot-Deloro",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^3.4.0"
+  }
+}
