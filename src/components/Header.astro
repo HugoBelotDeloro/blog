@@ -4,20 +4,19 @@ import Navigation from "./Navigation.astro";
 ---
 
 <header>
+  <Hamburger />
   <nav>
-    <Hamburger />
     <Navigation />
   </nav>
 </header>
-<div class="padding">
-  <style>
-    header {
-      position: fixed;
-    }
 
-    .padding,
-    header {
-      height: 4rem;
-    }
-  </style>
-</div>
+<style>
+  header {
+    position: sticky;
+    top: 1em;
+  }
+
+  nav {
+    margin-left: 5em;
+  }
+</style>

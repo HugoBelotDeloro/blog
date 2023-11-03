@@ -7,9 +7,14 @@ import { Icon } from "astro-icon";
   <a href="/about/">About</a>
   <a href="/blog/">Blog</a>
   <a href="/tags/">Tags</a>
-  <a href="https://github.com/HugoBelotDeloro"><Icon pack="feather" name="github" /></a>
-  <a href="https://www.linkedin.com/in/hugo-belot-deloro/"><Icon pack="feather" name="linkedin" /></a>
+  <a href="https://github.com/HugoBelotDeloro">
+    <Icon pack="feather" name="github" />
+  </a>
+  <a href="https://www.linkedin.com/in/hugo-belot-deloro/">
+    <Icon pack="feather" name="linkedin" />
+  </a>
 </div>
+
 <style>
   [astro-icon] {
     height: 1em;
@@ -17,12 +22,8 @@ import { Icon } from "astro-icon";
   }
 
   .nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
     display: none;
-    margin: 0;
+    flex-direction: column;
   }
 
   .nav-links a {
@@ -33,29 +34,49 @@ import { Icon } from "astro-icon";
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    color: #00539f;
+    background-color: #b7bec5;
+  }
+
+  .nav-links a:first-child() {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
+
+  .nav-links a:last-child() {
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
   }
 
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #ff9776;
+    background-color: #dddddd;
   }
 
   .expanded {
-    display: unset;
+    display: flex;
   }
 
   @media screen and (min-width: 636px) {
     .nav-links {
-      margin-left: 5em;
-      display: block;
-      position: static;
-      width: auto;
-      background: none;
+      display: flex;
+      flex-direction: row;
     }
 
     .nav-links a {
-      display: inline-block;
       padding: 15px 20px;
+    }
+
+    .nav-links a:first-child() {
+      border-top-left-radius: 999em;
+      border-bottom-left-radius: 999em;
+      border-top-right-radius: unset;
+    }
+
+    .nav-links a:last-child() {
+      border-top-right-radius: 999em;
+      border-bottom-right-radius: 999em;
+      border-bottom-left-radius: unset;
     }
   }
 </style>
