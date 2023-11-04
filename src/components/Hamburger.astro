@@ -1,20 +1,32 @@
 ---
 import { Icon } from "astro-icon";
 ---
-
-<Icon pack="feather" name="menu" class="hamburger" />
+<span>
+  <Icon pack="feather" name="menu" class="hamburger" />
+</span>
 <style>
   [astro-icon] {
-    height: 1.5em;
+  }
+
+  span {
+    display: inline-block;
+    background: white;
+    border-radius: 2em;
+    box-shadow: 2px 3px 3px gray;
+    height: 2em;
+    width: 2em;
+    text-align: center;
   }
 
   .hamburger {
-    padding-right: 20px;
     cursor: pointer;
+    height: 1em;
+    width: 1em;
+    margin: 0.5em auto;
   }
 
   @media screen and (min-width: 636px) {
-    .hamburger {
+    span {
       display: none;
     }
   }
