@@ -28,7 +28,7 @@ module.exports = {
     },
     {
       files: ["*.mdx"],
-      extends: ["plugin:mdx/recommended"],
+      extends: ["plugin:react/recommended", "plugin:mdx/recommended"],
     },
   ],
   parser: "@typescript-eslint/parser",
