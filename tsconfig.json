@@ -1,4 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strictest",
-  "files": [".eslintrc.cjs"]
+  "extends": "astro/tsconfigs/strictest"
 }
