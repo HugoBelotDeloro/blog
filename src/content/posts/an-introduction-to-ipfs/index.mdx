@@ -137,20 +137,20 @@ Therefore, it is crucial for IPFS (which uses cryptographic hashes for many appl
 The _multihash_ format aims to solve this issue by storing a code representing a hash function alongside the hash.
 The format of a multihash is as follow:
 
-\<<span class="purple">hash-func-type</span>>\<<span class="green">digest-length</span>>\<<span class="blue">digest-value</span>>
+\<<span className="purple">hash-func-type</span>>\<<span className="green">digest-length</span>>\<<span className="blue">digest-value</span>>
 
 with:
 
-- <span class="purple">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
+- <span className="purple">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
   an unsigned integer of variable size (wait until the next section for more details)
   which identifies a hash function by its index in a predefined table. The [multicodec
   table](https://github.com/multiformats/multicodec/blob/master/table.csv) is the
   default table, but you can specify another one yourself.
-- <span class="green">digest-length</span> ([unsigned variable integer](#unsigned-varint)):
+- <span className="green">digest-length</span> ([unsigned variable integer](#unsigned-varint)):
   the length of the hash, in bytes.
-- <span class="blue">digest-value</span> (hash): the hash itself.
+- <span className="blue">digest-value</span> (hash): the hash itself.
 
-For example <span class="">12</span><span class="green">20</span><span class="blue">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
+For example <span className="">12</span><span className="green">20</span><span className="blue">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
 
 ### Unsigned varint
 
@@ -161,7 +161,7 @@ They are encoded from the least significant bit to the most significant bit in i
 In each byte of the encoded number, the most significant bit is the continuation bit, set if an only if there is another byte following this one.
 The seven remaining bits are used to store the binary-encoded number.
 
-To encode a number (for example <span class="accent">37 334</span>) you would convert it to binary (<span class="accent">0b1001 0001 1101 0110</span>), reverse the order of the bits (<span class="accent">0110 1011 1000 1001</span>), cut it in "packets" of seven bits (<span class="accent">0110101 1100010 0100000</span>) then add the continuation bit to each packet (<span class="accent">10110101 11100010 00100000</span>, or <span class="accent">0xB5E220</span>).
+To encode a number (for example <span className="accent">37 334</span>) you would convert it to binary (<span className="accent">0b1001 0001 1101 0110</span>), reverse the order of the bits (<span className="accent">0110 1011 1000 1001</span>), cut it in "packets" of seven bits (<span className="accent">0110101 1100010 0100000</span>) then add the continuation bit to each packet (<span className="accent">10110101 11100010 00100000</span>, or <span className="accent">0xB5E220</span>).
 
 ### Multicodec
 
@@ -187,7 +187,7 @@ Let's imagine you need to send a file through a textual messaging system, such a
 You cannot send the binary file directly, and you cannot simply send it as ASCII because some characters (control codes, the null byte comes to mind) might not be supported properly.
 Your solution is then to convert your binary file into a text file using only supported characters like digits and regular letters.
 
-To this end, many binary-to-text encodings have been created such as base64 which uses all alphanumeric characters as well as the + and / signs (<span class="accent">[A-Za-z0-9+/]</span> if you like regexes) and where each character represents 6 bits of data (<span class="accent">2^6 = 64</span>).
+To this end, many binary-to-text encodings have been created such as base64 which uses all alphanumeric characters as well as the + and / signs (<span className="accent">[A-Za-z0-9+/]</span> if you like regexes) and where each character represents 6 bits of data (<span className="accent">2^6 = 64</span>).
 The issue that arises from that is obviously that when receiving such text-encoded binary data, one might not know what the encoding is.
 Provided the text fragment is long enough one might be able to infer the set of all characters used in the encoding scheme, but there might still be several encodings using the same set of characters and which assign different values to the same character.
 
@@ -219,15 +219,15 @@ There are currently two types of CIDs as well as a special human-readable format
 
 The _human-readable form_ of a CID looks like this:
 
-\<<span class="purple">hr-mbc</span>>-\<<span class="green">hr-cid-version</span>>-\<<span class="blue">hr-mc</span>>-\<<span class="red">hr-mh</span>>
+\<<span className="purple">hr-mbc</span>>-\<<span className="green">hr-cid-version</span>>-\<<span className="blue">hr-mc</span>>-\<<span className="red">hr-mh</span>>
 
 with:
 
-- <span class="purple">hr-mbc</span>: the multibase code
-- <span class="green">hr-cid-version</span>: the CID version
-- <span class="blue">hr-mc</span>: the multicodec code for the multihash's
+- <span className="purple">hr-mbc</span>: the multibase code
+- <span className="green">hr-cid-version</span>: the CID version
+- <span className="blue">hr-mc</span>: the multicodec code for the multihash's
   encoding
-- <span class="red">hr-mh</span>: the multihash Obviously each of these
+- <span className="red">hr-mh</span>: the multihash Obviously each of these
   components must be in a human-readable format themselves.
 
 #### CIDv0
@@ -242,17 +242,17 @@ For example, `QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU` is a CIDv0 multiha
 CIDv1, in contrast, is the first version of the CID standard which includes a version number, allowing the standard to evolve further.
 It follows the format:
 
-\<<span class="purple">mb-prefix</span>>\<<span class="green">cid-version</span>>\<<span class="blue">mc-ct</span>>\<<span class="red">mh-ca</span>>
+\<<span className="purple">mb-prefix</span>>\<<span className="green">cid-version</span>>\<<span className="blue">mc-ct</span>>\<<span className="red">mh-ca</span>>
 
 with:
 
-- <span class="purple">mb-prefix</span> ([multibase code](#multibase)): the multibase
+- <span className="purple">mb-prefix</span> ([multibase code](#multibase)): the multibase
   prefix
-- <span class="green">cid-version</span> ([unsigned varint](#unsigned-varint)): the
-  CID version (here 1)
-- <span class="blue">mc-ct</span> ([multicodec code](#multicodec)): the format of
-  the data referred to by the CID
-- <span class="red">mh-ca</span> ([multihash](#multihash)): the hash of the referred
+- <span className="green">cid-version</span> ([unsigned varint](#unsigned-varint)):
+  the CID version (here 1)
+- <span className="blue">mc-ct</span> ([multicodec code](#multicodec)): the format
+  of the data referred to by the CID
+- <span className="red">mh-ca</span> ([multihash](#multihash)): the hash of the referred
   data.
 
 So when you try to decode a CID, you first check if the format matches the CIDv0 format and then if it does then you implicitly know the encoding.
@@ -503,7 +503,7 @@ There are a lot of acronyms around IPFS. Here are some of them.
 - **libp2p**: the network stack used by IPFS, which is its lowest level component.
   Its task is establishing connections between peers to allow data transfer.
 - **encoding**: the way data is stored in a medium.
-  For an unsigned integer stored as text, you could encode it using its binary (<span class="accent">0b00101010</span>), decimal(<span class="accent">0d42</span>) or hexadecimal (<span class="accent">0x2a</span>) representation.
+  For an unsigned integer stored as text, you could encode it using its binary (<span className="accent">0b00101010</span>), decimal(<span className="accent">0d42</span>) or hexadecimal (<span className="accent">0x2a</span>) representation.
   To store text as numbers, you could use ASCII or UTF-8 for example.
 - **base58**: an encoding that uses alphanumeric characters (digits, lowercase letters, uppercase letters) with a 58 radix to store numbers.
   You might notice that things do not quite add up though: there are 26 lowercase letters, just as many uppercase and ten digits.
