@@ -1,46 +1,26 @@
 ---
+import type { MarkdownHeading } from "astro";
 import type { CollectionEntry } from "astro:content";
+import TableOfContents from "../components/TableOfContents.astro";
+import TagLinks from "../components/TagLinks.astro";
+import { buildToc } from "../lib/table-of-contents";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"posts">["data"];
   minutesRead: string;
+  headings: MarkdownHeading[];
 }
 
-const { frontmatter, minutesRead } = Astro.props;
+const { frontmatter, minutesRead, headings } = Astro.props;
+const toc = buildToc(headings, 0);
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
   <p>{minutesRead}</p>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <TagLinks tags={frontmatter.tags}/>
+  <TableOfContents toc={toc}/>
   <slot />
 </BaseLayout>
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>

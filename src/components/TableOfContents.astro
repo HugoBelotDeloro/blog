@@ -1,0 +1,20 @@
+---
+import { type Headings } from "../lib/table-of-contents";
+
+interface Props {
+  toc: Headings[];
+}
+
+const { toc } = Astro.props;
+---
+
+<ul>
+  {
+    toc.map((heading) => (
+      <li>
+        <a href={`#${heading.slug}`}>{heading.text}</a>
+        {heading.children.length !== 0 && <Astro.self toc={heading.children}/>}
+      </li>
+    ))
+  }
+</ul>
