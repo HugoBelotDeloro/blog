@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import TagLinks from "./TagLinks.astro";
 const { slug } = Astro.props;
 const post = await getEntry("posts", slug);
 if (post === undefined) {
@@ -11,9 +12,9 @@ if (post === undefined) {
   {post.data.title}
 </a>
 <p>
-    {post.data.description}
+  {post.data.description}
 </p>
-<p>
+<span>
   {
     post.data.date.toLocaleDateString(undefined, {
       day: "numeric",
@@ -21,4 +22,5 @@ if (post === undefined) {
       year: "numeric",
     })
   }
-</p>
+</span>
+<TagLinks tags={post.data.tags} />
