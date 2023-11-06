@@ -1,9 +1,9 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { getCollection } from "astro:content";
+import { getAllPostsSorted } from "../lib/posts";
 
 export async function GET(context: APIContext) {
-  const posts = await getCollection("posts");
+  const posts = await getAllPostsSorted();
   return rss({
     title: "Iridescent's blog",
     description: "Posts from Iridescent's blog",

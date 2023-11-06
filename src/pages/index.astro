@@ -1,13 +1,11 @@
 ---
-import { getCollection } from "astro:content";
 import PostLink from "../components/PostLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getAllPostsSorted } from "../lib/posts";
+
 const pageTitle = "Home Page";
-const collection = await getCollection("posts");
-const sortedCollection = collection.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
-const latestPosts = sortedCollection.slice(0, 5);
+const posts = await getAllPostsSorted();
+const latestPosts = posts.slice(0, 5);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -16,6 +14,12 @@ const latestPosts = sortedCollection.slice(0, 5);
 
   <h2>Latest posts:</h2>
   <ul>
-    {latestPosts.map(post => <li><PostLink slug={post.slug}/></li>)}
+    {
+      latestPosts.map((post) => (
+        <li>
+          <PostLink slug={post.slug} />
+        </li>
+      ))
+    }
   </ul>
 </BaseLayout>
