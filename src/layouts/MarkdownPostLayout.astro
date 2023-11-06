@@ -1,15 +1,18 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
 
 interface Props {
   frontmatter: CollectionEntry<"posts">["data"];
+  minutesRead: string;
 }
+
+const { frontmatter, minutesRead } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
+  <p>{minutesRead}</p>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
   <div class="tags">
     {
