@@ -9,6 +9,7 @@ interface Props {
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
   <div class="tags">
     {

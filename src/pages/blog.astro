@@ -9,6 +9,6 @@ const pageTitle = "My Astro Learning Blog";
 <BaseLayout pageTitle={pageTitle}>
   <h1>My blog</h1>
   <ul>
-    {allPosts.map((post) => <li><PostLink title={post.data.title} slug={post.slug}></PostLink></li>)}
+    {allPosts.map((post) => <li><PostLink slug={post.slug}></PostLink></li>)}
   </ul>
 </BaseLayout>
