@@ -12,15 +12,15 @@ const { tag } = Astro.props;
 
 <style>
   a {
-    color: #00539f;
+    color: var(--link-text-color);
   }
 
   .tag {
     margin: 0.25em;
-    border: dotted 1px #a1a1a1;
+    background-color: var(--bg-color-2);
+    box-shadow: 2px 3px 3px var(--shadow-color);
     border-radius: 0.5em;
     padding: 0.5em 1em;
     font-size: 1.15em;
-    background-color: #f8fcfd;
   }
 </style>

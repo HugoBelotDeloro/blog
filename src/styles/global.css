@@ -1,5 +1,13 @@
+:root {
+  --base-bg-color: #f1f5f9;
+  --bg-color-1: #b7bec5;
+  --bg-color-2: #969ba0;
+  --shadow-color: gray;
+  --link-text-color: #00539f;
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--base-bg-color);
   font-family: sans-serif;
 }
 
