@@ -8,17 +8,17 @@ import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   frontmatter: CollectionEntry<"posts">["data"];
-  minutesRead: string;
+  readingTime: string;
   headings: MarkdownHeading[];
 }
 
-const { frontmatter, minutesRead, headings } = Astro.props;
+const { frontmatter, readingTime, headings } = Astro.props;
 const toc = buildToc(headings, 0);
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
-  <p>{minutesRead}</p>
+  <p>{readingTime}</p>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
   <TagLinks tags={frontmatter.tags}/>
   <TableOfContents toc={toc}/>

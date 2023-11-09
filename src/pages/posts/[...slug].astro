@@ -21,7 +21,7 @@ const { Content, remarkPluginFrontmatter, headings } = await entry.render();
 
 <MarkdownPostLayout
   frontmatter={entry.data}
-  minutesRead={remarkPluginFrontmatter.minutesRead}
+  readingTime={remarkPluginFrontmatter.readingTime}
   headings={headings}
 >
   <Content />
