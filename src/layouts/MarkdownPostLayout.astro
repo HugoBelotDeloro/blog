@@ -18,8 +18,9 @@ const toc = buildToc(headings, 0);
 
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
-  <p>{readingTime}</p>
-  <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
+  <p>
+    Published on {frontmatter.date.toString().slice(0, 10)} - {readingTime}
+  </p>
   <TagLinks tags={frontmatter.tags} />
   <div class="toc">
     <TableOfContents toc={toc} />
@@ -30,12 +31,18 @@ const toc = buildToc(headings, 0);
 </BaseLayout>
 
 <style>
+  @media screen and (min-width: 2000px) {
+    .toc {
+      position: fixed;
+      left: 1rem;
+      overflow: scroll;
+      top: 10vh;
+      max-height: 80vh;
+    }
+  }
+
   .toc {
-    position: fixed;
-    left: 1rem;
-    overflow: scroll;
-    top: 10vh;
-    max-height: 80vh;
+    display: inline-block;
     background-color: var(--bg-color-2);
     border-radius: 1em;
     padding-right: 1ch;

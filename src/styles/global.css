@@ -3,9 +3,10 @@
   --bg-color-1: #b7bec5;
   --bg-color-2: #0f172a;
   --shadow-color: gray;
-  --link-text-color: #00539f;
+  --text-color-link: #00539f;
   --text-color-1: black;
   --text-color-2: #c7c7c7;
+  --text-color-faded: gray;
 }
 
 html {
