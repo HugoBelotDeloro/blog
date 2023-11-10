@@ -15,10 +15,12 @@ const css_debug = false;
     {css_debug && <link rel="stylesheet" href="/styles/debug.css" />}
   </head>
   <body>
-    <Header />
-    <slot />
-    <script>
-      import "../scripts/menu.js";
-    </script>
+    <div class="central">
+      <Header />
+      <slot />
+      <script>
+        import "../scripts/menu.js";
+      </script>
+    </div>
   </body>
 </html>

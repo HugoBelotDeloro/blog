@@ -6,15 +6,41 @@ interface Props {
 }
 
 const { toc } = Astro.props;
+const fullToc: Headings = {
+  text: "Summary:",
+  children: toc,
+  slug: "",
+};
 ---
 
 <ul>
   {
-    toc.map((heading) => (
-      <li>
-        <a href={`#${heading.slug}`}>{heading.text}</a>
-        {heading.children.length !== 0 && <Astro.self toc={heading.children} />}
-      </li>
-    ))
+    (function tocNode(heading: Headings) {
+      return (
+        <li>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+            {heading.children.length !== 0 && (
+              <ul>{heading.children.map(tocNode)}</ul>
+            )}
+          </li>
+      );
+    })(fullToc)
   }
 </ul>
+
+<style>
+  li {
+    list-style: none;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1ch;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color-2);
+  }
+</style>

@@ -1,9 +1,11 @@
 :root {
   --base-bg-color: #f1f5f9;
   --bg-color-1: #b7bec5;
-  --bg-color-2: #969ba0;
+  --bg-color-2: #0f172a;
   --shadow-color: gray;
   --link-text-color: #00539f;
+  --text-color-1: black;
+  --text-color-2: #c7c7c7;
 }
 
 html {
@@ -11,7 +13,7 @@ html {
   font-family: sans-serif;
 }
 
-body {
+.central {
   margin: 0 auto;
   font-size: 1.5rem;
   width: 100%;

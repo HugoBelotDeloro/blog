@@ -21,8 +21,23 @@ const toc = buildToc(headings, 0);
   <p>{readingTime}</p>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
   <TagLinks tags={frontmatter.tags} />
-  <TableOfContents toc={toc} />
+  <div class="toc">
+    <TableOfContents toc={toc} />
+  </div>
   <main>
     <slot />
   </main>
 </BaseLayout>
+
+<style>
+  .toc {
+    position: fixed;
+    left: 1rem;
+    overflow: scroll;
+    top: 10vh;
+    max-height: 80vh;
+    background-color: var(--bg-color-2);
+    border-radius: 1em;
+    padding-right: 1ch;
+  }
+</style>
