@@ -13,7 +13,7 @@ const { toc } = Astro.props;
     toc.map((heading) => (
       <li>
         <a href={`#${heading.slug}`}>{heading.text}</a>
-        {heading.children.length !== 0 && <Astro.self toc={heading.children}/>}
+        {heading.children.length !== 0 && <Astro.self toc={heading.children} />}
       </li>
     ))
   }

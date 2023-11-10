@@ -20,7 +20,9 @@ const toc = buildToc(headings, 0);
   <h1>{frontmatter.title}</h1>
   <p>{readingTime}</p>
   <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
-  <TagLinks tags={frontmatter.tags}/>
-  <TableOfContents toc={toc}/>
-  <slot />
+  <TagLinks tags={frontmatter.tags} />
+  <TableOfContents toc={toc} />
+  <main>
+    <slot />
+  </main>
 </BaseLayout>

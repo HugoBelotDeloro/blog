@@ -10,8 +10,14 @@ interface Props {
 ---
 
 <div>
-  <Image {...Astro.props}/>
-  {Astro.slots.has('default') && <i><slot/></i>}
+  <Image {...Astro.props} />
+  {
+    Astro.slots.has("default") && (
+      <i>
+        <slot />
+      </i>
+    )
+  }
 </div>
 <style>
   div {
