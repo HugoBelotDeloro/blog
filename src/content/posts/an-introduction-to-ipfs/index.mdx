@@ -3,6 +3,7 @@ title: "An Introduction to IPFS"
 date: 2022-02-09T22:32:01+01:00
 tags: ["IPFS"]
 description: "An overview of the InterPlanetary FileSystem"
+katex: true
 ---
 
 import HashTree from "./Hash_Tree.png";
@@ -13,7 +14,6 @@ import PeersSubscription from "./peers_subscription.png";
 import TypesOfPeering from "./types_of_peering.png";
 import "./style.css";
 
-import Latex from "../../../components/Latex.astro";
 import BlogImage from "../../../components/BlogImage.astro";
 
 Note: as the title might suggest, this article is a bit heavy on acronyms. There is a glossary at the end though, in case you need a refresher on some terms.
@@ -356,28 +356,30 @@ Keys are the same size and format as node IDs (which are CIDs), and files are st
 #### XOR as a distance function
 
 First, a reminder of how a distance function is defined.
-A distance function is a function <Latex formula="d:X*X\to[0,\infty)"/> where <Latex formula="X"/> is a set.
-To qualify as a valid metric, a function must have the following properties for <Latex formula="x,y,z\in X"/>:
+A distance function is a function $$d:X*X\to[0,\infty)$$ where $$X$$ is a set.
+To qualify as a valid metric, a function must have the following properties for $$x,y,z\in X$$:
 
-- <Latex formula="d(x,y)=0\Leftrightarrow x=y" />: two elements are equal if and
+- $$d(x,y)=0\Leftrightarrow x=y$$: two elements are equal if and
   only if their distance is zero.
-- <Latex formula="d(x,y)=d(y,x)" />: a distance function must be symmetrical,
+- $$d(x,y)=d(y,x)$$: a distance function must be symmetrical,
   the distance is the same from both ends.
-- <Latex formula="d(x,y)\le d(x,z)+d(z,y)" />: a distance function must respect
+- $$d(x,y)\le d(x,z)+d(z,y)$$: a distance function must respect
   the triangular inequality, in other words a direct path cannot be longer than
-  an indirect one. One of Kademlia's most important innovations is its use of
-  the XOR function as a metric (XOR as in the exclusive OR of all bits of the
-  two operands). Let us verify that XOR is indeed a distance function.
+  an indirect one.
+
+One of Kademlia's most important innovations is its use of the XOR function as a metric (XOR as in the exclusive OR of all bits of the two operands). Let us verify that XOR is indeed a distance function.
+
 - The first property should be self-evident. XOR returns 0 if and only if both bits are equal.
 - Symmetry should not be a problem either, the truth table of the XOR function is symmetrical.
 - Triangular inequality a little more difficult.
-  We should note that a XOR function's result is equal to the sum of its operands if they share no power of two in their decomposition and less than it if they do (<Latex formula="a\oplus b\leq a+b"/>).
+  We should note that a XOR function's result is equal to the sum of its operands if they share no power of two in their decomposition and less than it if they do ($$a\oplus b\leq a+b$$).
 
-Another property to note is that since XOR is associative (<Latex formula="(a\oplus b)\oplus c=a\oplus (b\oplus c)"/>) and commutative (<Latex formula="a\oplus b=b\oplus a"/>) along with <Latex formula="a\oplus a=0"/> we can deduce <Latex formula="a\oplus b=a\oplus b\oplus c\oplus c=(a\oplus b)\oplus(b\oplus c)"/>.
-By combining these properties we see that <Latex formula="a\oplus c=(a\oplus b)\oplus(b\oplus c)\le (a\oplus b)+(b\oplus c)"/> and thus triangular inequality is respected.
+  Another property to note is that since XOR is associative ($$(a\oplus b)\oplus c=a\oplus (b\oplus c)$$) and commutative ($$a\oplus b=b\oplus a$$) along with $$a\oplus a=0$$ we can deduce $$a\oplus c=a\oplus b\oplus b\oplus c=(a\oplus b)\oplus(b\oplus c)$$.
+
+  By combining these properties we see that $$a\oplus c=(a\oplus b)\oplus(b\oplus c)\le (a\oplus b)+(b\oplus c)$$ and thus triangular inequality is respected.
 
 A particular property of XOR as a distance function is that it is _unidirectional_, which means that there is only a single point that is at a given distance of a given point.
-In other words, if you take a point <Latex formula="x"/> and look for all points at a distance <Latex formula="\Delta"/> to <Latex formula="x"/>, you will only ever find a single point.
+In other words, if you take a point $$x$$ and look for all points at a distance $$\Delta$$ to $$x$$, you will only ever find a single point.
 
 As an example, here are the XOR distances to five for number from 0 to 9:
 

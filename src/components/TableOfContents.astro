@@ -18,11 +18,11 @@ const fullToc: Headings = {
     (function tocNode(heading: Headings) {
       return (
         <li>
-            <a href={`#${heading.slug}`}>{heading.text}</a>
-            {heading.children.length !== 0 && (
-              <ul>{heading.children.map(tocNode)}</ul>
-            )}
-          </li>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+          {heading.children.length !== 0 && (
+            <ul>{heading.children.map(tocNode)}</ul>
+          )}
+        </li>
       );
     })(fullToc)
   }

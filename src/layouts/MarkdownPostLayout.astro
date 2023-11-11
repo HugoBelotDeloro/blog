@@ -16,6 +16,17 @@ const { frontmatter, readingTime, headings } = Astro.props;
 const toc = buildToc(headings, 0);
 ---
 
+{
+  frontmatter.katex && (
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+      crossorigin="anonymous"
+    />
+  )
+}
+
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
   <p>
