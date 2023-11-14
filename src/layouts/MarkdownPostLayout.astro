@@ -1,19 +1,22 @@
 ---
-import type { MarkdownHeading } from "astro";
 import type { CollectionEntry } from "astro:content";
 import TableOfContents from "../components/TableOfContents.astro";
 import TagLinks from "../components/TagLinks.astro";
 import { buildToc } from "../lib/table-of-contents";
 import BaseLayout from "./BaseLayout.astro";
+import { getRenderedPost } from "../lib/posts";
 
 interface Props {
-  frontmatter: CollectionEntry<"posts">["data"];
-  readingTime: string;
-  headings: MarkdownHeading[];
+  post: CollectionEntry<"posts">;
 }
 
-const { frontmatter, readingTime, headings } = Astro.props;
+const { post } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter } = await getRenderedPost(
+  post.slug,
+);
+const frontmatter = post.data;
 const toc = buildToc(headings, 0);
+const readingTime = remarkPluginFrontmatter.readingTime;
 ---
 
 {
@@ -30,14 +33,21 @@ const toc = buildToc(headings, 0);
 <BaseLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
   <p>
-    Published on {frontmatter.date.toString().slice(0, 10)} - {readingTime}
+    Published on
+    {
+      frontmatter.date.toLocaleDateString(undefined, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+    } - {readingTime}
   </p>
   <TagLinks tags={frontmatter.tags} />
   <div class="toc">
     <TableOfContents toc={toc} />
   </div>
   <main>
-    <slot />
+    <Content />
   </main>
 </BaseLayout>
 
