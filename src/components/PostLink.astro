@@ -1,9 +1,11 @@
 ---
 import { getEntry } from "astro:content";
+import { getRenderedPost } from "../lib/posts";
 import TagLinks from "./TagLinks.astro";
 
 const { slug } = Astro.props;
 const post = await getEntry("posts", slug);
+const { remarkPluginFrontmatter } = await getRenderedPost(slug);
 
 if (post === undefined) {
   throw new Error(`Post not found: ${slug}`);
@@ -25,7 +27,7 @@ if (post === undefined) {
         year: "numeric",
       })
     }
-  </span>
+  </span> - <span>{remarkPluginFrontmatter.readingTime}</span>
   <TagLinks tags={post.data.tags} />
 </div>
 
