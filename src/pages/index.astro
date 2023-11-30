@@ -1,5 +1,5 @@
 ---
-import PostLink from "../components/PostLink.astro";
+import PostLinks from "../components/PostLinks.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../lib/posts";
 
@@ -13,13 +13,5 @@ const latestPosts = posts.slice(0, 5);
    It is still a work in progress
 
   <h2>Latest posts:</h2>
-  <ul>
-    {
-      latestPosts.map((post) => (
-        <li>
-          <PostLink slug={post.slug} />
-        </li>
-      ))
-    }
-  </ul>
+  <PostLinks posts={latestPosts}/>
 </BaseLayout>

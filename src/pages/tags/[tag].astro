@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import PostLink from "../../components/PostLink.astro";
+import PostLinks from "../../components/PostLinks.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../../lib/posts";
 
@@ -32,13 +32,5 @@ const { posts } = Astro.props;
 
 <BaseLayout pageTitle={tag}>
   <h1>{tag}</h1>
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <PostLink slug={post.slug} />
-        </li>
-      ))
-    }
-  </ul>
+  <PostLinks {posts}/>
 </BaseLayout>

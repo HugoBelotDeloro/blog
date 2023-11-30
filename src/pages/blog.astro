@@ -1,5 +1,5 @@
 ---
-import PostLink from "../components/PostLink.astro";
+import PostLinks from "../components/PostLinks.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../lib/posts";
 
@@ -9,13 +9,5 @@ const pageTitle = "My Astro Learning Blog";
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>My blog</h1>
-  <ul>
-    {
-      allPosts.map((post) => (
-        <li>
-          <PostLink slug={post.slug} />
-        </li>
-      ))
-    }
-  </ul>
+  <PostLinks posts={allPosts}/>
 </BaseLayout>

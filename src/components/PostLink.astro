@@ -4,6 +4,11 @@ import { getRenderedPost } from "../lib/posts";
 import TagLinks from "./TagLinks.astro";
 
 const { slug } = Astro.props;
+
+interface Props {
+  slug: string;
+}
+
 const post = await getEntry("posts", slug);
 const { remarkPluginFrontmatter } = await getRenderedPost(slug);
 
