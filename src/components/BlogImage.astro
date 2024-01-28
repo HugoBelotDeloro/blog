@@ -5,12 +5,16 @@ import { Image } from "astro:assets";
 interface Props {
   src: ImageMetadata;
   alt: string;
-  width?: number;
+  bleed?: boolean;
 }
+
+const { src, alt, bleed } = Astro.props;
+
+const className = bleed ? "full-bleed" : undefined;
 ---
 
-<div>
-  <Image {...Astro.props} />
+<div class={className}>
+  <Image {src} {alt} />
   {
     Astro.slots.has("default") && (
       <i>

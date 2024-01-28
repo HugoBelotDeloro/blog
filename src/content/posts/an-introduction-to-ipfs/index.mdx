@@ -11,6 +11,7 @@ import IPFSLogo from "./IPFS_logo.svg";
 import MetadataOnlyNetwork from "./metadata_only_network.png";
 import NetworkDegree from "./network-degree.png";
 import PeersSubscription from "./peers_subscription.png";
+import "./style.css";
 import TypesOfPeering from "./types_of_peering.png";
 import "./style.css";
 
@@ -335,7 +336,7 @@ When you change a leaf its hash changes which in turns changes its parent's hash
 The old CIDs are still around though, which means Merkle DAGs are immutable data structures. If you know how immutable lists work, they are very similar.
 Since a CID can identify a single node with many children, a single CID can link to many different but related pieces of data, effectively becoming directories.
 
-<BlogImage src={HashTree} alt="Hash tree example" width="700">
+<BlogImage src={HashTree} alt="Hash tree example">
   An example of a hash tree
   ([Source](https://en.wikipedia.org/wiki/Merkle_tree))
 </BlogImage>

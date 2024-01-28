@@ -2,9 +2,9 @@
 import type { CollectionEntry } from "astro:content";
 import TableOfContents from "../components/TableOfContents.astro";
 import TagLinks from "../components/TagLinks.astro";
-import { buildToc } from "../lib/table-of-contents";
-import BaseLayout from "./BaseLayout.astro";
 import { getRenderedPost } from "../lib/posts";
+import { buildToc } from "../lib/table-of-contents";
+import FullBleedLayout from "./FullBleedLayout.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -30,7 +30,7 @@ const readingTime = remarkPluginFrontmatter.readingTime;
   )
 }
 
-<BaseLayout pageTitle={frontmatter.title}>
+<FullBleedLayout pageTitle={frontmatter.title}>
   <h1>{frontmatter.title}</h1>
   <p>
     Published on
@@ -46,10 +46,8 @@ const readingTime = remarkPluginFrontmatter.readingTime;
   <div class="toc">
     <TableOfContents toc={toc} />
   </div>
-  <main>
-    <Content />
-  </main>
-</BaseLayout>
+  <Content />
+</FullBleedLayout>
 
 <style>
   @media screen and (min-width: 2000px) {

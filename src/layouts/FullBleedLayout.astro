@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+---
+
+<BaseLayout {pageTitle} disableMainElement>
+  <main>
+    <slot />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns:
+      1fr
+      min(65ch, 100%)
+      1fr;
+  }
+</style>
+<style is:global>
+  main > * {
+    grid-column: 2;
+  }
+
+  .full-bleed {
+    grid-column: 1/4;
+    margin: 0 auto;
+  }
+</style>

@@ -27,10 +27,13 @@ interface Props {
 }
 
 const { tag } = Astro.params;
+if (tag === undefined) {
+  throw "Undefined tag"
+}
 const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
   <h1>{tag}</h1>
-  <PostLinks {posts}/>
+  <PostLinks {posts} />
 </BaseLayout>

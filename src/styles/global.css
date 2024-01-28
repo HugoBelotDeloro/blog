@@ -14,20 +14,33 @@ html {
   font-family: sans-serif;
 }
 
-.central {
+#main {
   margin: 0 auto;
-  font-size: 1.5rem;
   width: 100%;
   max-width: 60ch;
   padding: 1rem;
-  line-height: 1.5;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 h1 {
-  margin: 1rem 0;
+  margin: 2rem 0;
   font-size: 2.5rem;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 0.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+table {
+  margin: 1rem auto;
 }
