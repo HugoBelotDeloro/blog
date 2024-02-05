@@ -1,6 +1,7 @@
 import mdx from "@astrojs/mdx";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import remarkMath from "remark-math";
@@ -15,6 +16,7 @@ export default defineConfig({
       rehypeKatex,
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: "wrap" }],
+      [rehypeExternalLinks, { content: { type: "text", value: " 🔗" } }],
     ],
   },
 });
