@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
@@ -9,7 +10,7 @@ import { remarkReadingTime } from "./src/lib/remark-plugins/reading-time";
 
 export default defineConfig({
   site: "https://hugobelotdeloro.github.io/",
-  integrations: [mdx()],
+  integrations: [mdx(), icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [

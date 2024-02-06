@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="nav-links">
@@ -7,18 +7,18 @@ import { Icon } from "astro-icon";
   <a href="/blog/">Blog</a>
   <a href="/tags/">Tags</a>
   <a href="https://github.com/HugoBelotDeloro">
-    <Icon pack="feather" name="github" />
+    <Icon name="feather:github" />
   </a>
   <a href="https://www.linkedin.com/in/hugo-belot-deloro/">
-    <Icon pack="feather" name="linkedin" />
+    <Icon name="feather:linkedin" />
   </a>
   <a href="/rss.xml">
-    <Icon pack="feather" name="rss" />
+    <Icon name="feather:rss" />
   </a>
 </div>
 
 <style>
-  [astro-icon] {
+  [data-icon] {
     height: 1rem;
     vertical-align: text-top;
   }
