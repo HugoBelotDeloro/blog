@@ -16,9 +16,10 @@ const fullToc: Headings = {
 <ul>
   {
     (function tocNode(heading: Headings) {
+      const slug = heading.slug === "" ? "" : `#${heading.slug}`;
       return (
         <li>
-          <a href={`#${heading.slug}`}>{heading.text}</a>
+          <a href={slug}>{heading.text}</a>
           {heading.children.length !== 0 && (
             <ul>{heading.children.map(tocNode)}</ul>
           )}
