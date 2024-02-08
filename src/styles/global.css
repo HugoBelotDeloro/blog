@@ -1,16 +1,8 @@
-:root {
-  --base-bg-color: #f1f5f9;
-  --bg-color-1: #b7bec5;
-  --bg-color-2: #0f172a;
-  --shadow-color: gray;
-  --text-color-link: #00539f;
-  --text-color-1: black;
-  --text-color-2: #c7c7c7;
-  --text-color-faded: gray;
-}
+@import "palettes/aurelion.css";
 
 html {
-  background-color: var(--base-bg-color);
+  background-color: var(--bg-color-1);
+  color: var(--text-color-1);
   font-family: sans-serif;
 }
 
