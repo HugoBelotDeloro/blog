@@ -1,4 +1,4 @@
-:root {
+html[data-style="obsidian"] {
   --bg-color-1: #47223E;
   --text-color-1: #993DAF;
   --bg-color-2: #854066;

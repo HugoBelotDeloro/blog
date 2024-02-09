@@ -1,4 +1,10 @@
+@import "palettes/base.css";
 @import "palettes/aurelion.css";
+@import "palettes/dark-star.css";
+@import "palettes/obsidian.css";
+@import "palettes/void.css";
+@import "palettes/wanderer.css";
+@import "palettes/wisp.css";
 
 html {
   background-color: var(--bg-color-1);
