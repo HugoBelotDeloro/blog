@@ -13,7 +13,7 @@ const fullToc: Headings = {
 };
 ---
 
-<ul>
+<ul id="toc-root">
   {
     (function tocNode(heading: Headings) {
       const slug = heading.slug === "" ? "" : `#${heading.slug}`;
@@ -37,6 +37,10 @@ const fullToc: Headings = {
   ul {
     margin: 0;
     padding-left: 1ch;
+  }
+
+  ul#toc-root {
+    padding-left: 0;
   }
 
   a {

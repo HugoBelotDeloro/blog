@@ -43,8 +43,8 @@ const readingTime = remarkPluginFrontmatter.readingTime;
     } - {readingTime}
   </p>
   <TagLinks tags={frontmatter.tags} />
-  <div class="toc">
-    <TableOfContents toc={toc} />
+    <div class="toc">
+      <TableOfContents toc={toc} />
   </div>
   <Content />
 </FullBleedLayout>
@@ -64,6 +64,6 @@ const readingTime = remarkPluginFrontmatter.readingTime;
     display: inline-block;
     background-color: var(--bg-color-2);
     border-radius: 1em;
-    padding-right: 1ch;
+    padding: 1em;
   }
 </style>

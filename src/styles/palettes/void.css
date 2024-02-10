@@ -1,9 +1,9 @@
 html[data-style="void"] {
   --bg-color-1: #262334;
   --text-color-1: #d8f5f9;
-  --bg-color-2: #354d79;
-  --text-color-2: #69bbea;
-  --text-color-link: #3c72c5;
+  --bg-color-2: #2d4470;
+  --text-color-2: #3c72c5;
+  --text-color-link: #69bbea;
   --shadow-color: gray;
   --text-color-faded: gray;
 }

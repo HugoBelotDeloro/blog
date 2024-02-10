@@ -343,7 +343,7 @@ DAGs are widely used in distributed systems (eg. Git) because they are by nature
 This makes it easy for a single peer to store only smaller parts of the global DAG since they can choose a root node and only store it and its children.
 It is also easy to retrieve subtrees because they can be represented with only the root node's CID and the operation can be easily parallelized.
 It also helps reduce duplication, since two pieces of data with the same content would have the same CID, which is easy to notice since CIDs are hashes. IPFS then knows it only needs to store a single piece of data.
-For websites with a lot of duplicated content (espescially pictures and CSS), this means IPFS can detect when not to download files twice and make network usage more efficient.
+For websites with a lot of duplicated content (especially pictures and CSS), this means IPFS can detect when not to download files twice and make network usage more efficient.
 
 ### Kademlia
 
