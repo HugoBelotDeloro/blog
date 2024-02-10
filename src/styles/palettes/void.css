@@ -1,19 +1,19 @@
 html[data-style="void"] {
   --bg-color-1: #262334;
-  --text-color-1: #D8F5F9;
-  --bg-color-2: #354D79;
-  --text-color-2: #69BBEA;
-  --text-color-link: #3C72C5;
+  --text-color-1: #d8f5f9;
+  --bg-color-2: #354d79;
+  --text-color-2: #69bbea;
+  --text-color-link: #3c72c5;
   --shadow-color: gray;
   --text-color-faded: gray;
 }
 
 html[data-style="void2"] {
-  --bg-color-1: #2F2C40;
-  --text-color-1: #63BBF2;
-  --bg-color-2: #3B74BF;
-  --text-color-2: #D8F2F0;
-  --text-color-link: #94F2F2;
+  --bg-color-1: #2f2c40;
+  --text-color-1: #63bbf2;
+  --bg-color-2: #3b74bf;
+  --text-color-2: #d8f2f0;
+  --text-color-link: #94f2f2;
   --shadow-color: gray;
   --text-color-faded: gray;
 }

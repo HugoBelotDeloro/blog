@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="nav-links">
+<nav class="nav-links">
   <span id="title">Iridescent dreams</span>
   <a href="/">Home</a>
   <a href="/blog/">Blog</a>
@@ -16,7 +16,7 @@ import { Icon } from "astro-icon/components";
   <a href="/rss.xml">
     <Icon name="feather:rss" />
   </a>
-</div>
+</nav>
 
 <style>
   [data-icon] {
@@ -26,69 +26,31 @@ import { Icon } from "astro-icon/components";
   }
 
   #title {
-    width: 100%;
-    color: var(--text-color-2)
+    color: var(--text-color-1);
   }
 
-  .nav-links > a:has(> svg) {
+  nav > a:has(> svg) {
     flex-shrink: 0;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .nav-links > * {
+  nav > * {
     display: block;
-    padding: 10px 0;
+    padding: 15px 20px;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: var(--bg-color-2);
   }
 
-  .nav-links > *:first-child() {
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-  }
-
-  .nav-links > *:last-child() {
-    border-bottom-left-radius: 1em;
-    border-bottom-right-radius: 1em;
-  }
-
-  .nav-links a:hover,
-  .nav-links a:focus {
+  nav a:hover,
+  nav a:focus {
     color: var(--bg-color-2);
     background-color: var(--text-color-link);
-  }
-
-  .expanded {
-    display: flex;
-  }
-
-  @media screen and (min-width: 636px) {
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .nav-links > * {
-      padding: 15px 20px;
-    }
-
-    .nav-links > *:first-child() {
-      border-top-left-radius: 999em;
-      border-bottom-left-radius: 999em;
-      border-top-right-radius: unset;
-    }
-
-    .nav-links > *:last-child() {
-      border-top-right-radius: 999em;
-      border-bottom-right-radius: 999em;
-      border-bottom-left-radius: unset;
-    }
   }
 </style>

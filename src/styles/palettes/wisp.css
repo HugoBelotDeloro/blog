@@ -1,9 +1,9 @@
 html[data-style="wisp"] {
-  --bg-color-1: #8DA9F7;
+  --bg-color-1: #8da9f7;
   --text-color-1: #100821;
-  --bg-color-2: #5E56D6;
-  --text-color-2: #3E338C;
-  --text-color-link: #B879D6;
+  --bg-color-2: #5e56d6;
+  --text-color-2: #3e338c;
+  --text-color-link: #b879d6;
   --shadow-color: gray;
   --text-color-faded: gray;
 }

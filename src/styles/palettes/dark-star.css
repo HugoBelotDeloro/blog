@@ -1,9 +1,9 @@
 html[data-style="dark-star"] {
-  --bg-color-1: #1E233A;
-  --text-color-1: #8398AD;
-  --bg-color-2: #6A4883;
-  --text-color-2: #5E4AA9;
-  --text-color-link: #C95B8E;
+  --bg-color-1: #1e233a;
+  --text-color-1: #8398ad;
+  --bg-color-2: #6a4883;
+  --text-color-2: #5e4aa9;
+  --text-color-link: #c95b8e;
   --shadow-color: gray;
   --text-color-faded: gray;
 }
