@@ -1,8 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { class: className, ...rest } = Astro.props;
 ---
 
-<nav class="nav-links">
+<nav class={className} {...rest}>
   <a href="/">Iridescent dreams</a>
   <a href="/blog/">Blog</a>
   <a href="/tags/">Tags</a>

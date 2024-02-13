@@ -1,32 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { class: className, ...rest } = Astro.props;
 ---
 
-<span>
-  <Icon name="feather:menu" class="hamburger" />
+<span class={className} {...rest}>
+  <Icon name="feather:menu" class="hamburger-icon" />
 </span>
 <style>
   span {
-    display: inline-block;
+    display: block;
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
     background: var(--bg-color-2);
-    border-radius: 2em;
-    box-shadow: 2px 3px 3px var(--shadow-color);
-    height: 2em;
-    width: 2em;
+    border-radius: 4vw;
+    height: 10vw;
+    width: 10vw;
     text-align: center;
   }
 
-  .hamburger {
+  .hamburger-icon {
     cursor: pointer;
-    height: 1em;
-    width: 1em;
-    margin: 0.5em auto;
+    height: 5vw;
+    width: 5vw;
+    margin: 2.5vw auto;
     color: var(--text-color-link);
-  }
-
-  @media screen and (min-width: 636px) {
-    span {
-      display: none;
-    }
   }
 </style>

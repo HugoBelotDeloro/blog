@@ -4,8 +4,8 @@ import Navigation from "./Navigation.astro";
 ---
 
 <header>
-  <Hamburger />
-  <Navigation />
+  <Hamburger class="hamburger"/>
+  <Navigation class="navbar"/>
 </header>
 
 <style>
@@ -14,5 +14,17 @@ import Navigation from "./Navigation.astro";
     top: 0;
     background-color: var(--bg-color-1);
     z-index: 2;
+  }
+
+  @media screen and (min-width: 636px) {
+    .hamburger {
+      display: none;
+    }
+  }
+
+  @media screen and not (min-width: 636px) {
+    .navbar {
+      display: none;
+    }
   }
 </style>
