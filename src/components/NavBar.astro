@@ -1,0 +1,15 @@
+---
+import Navigation from "./Navigation.astro";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<Navigation class:list={["navigation", className]} {...rest} />
+
+<style>
+  .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+</style>
