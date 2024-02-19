@@ -4,14 +4,16 @@ import Navigation from "./Navigation.astro";
 const { class: className, ...rest } = Astro.props;
 ---
 
-<input type="checkbox" id="mobile-menu-toggle" />
 <div class={className} {...rest}>
-  <label for="mobile-menu-toggle" id="button-label"></label>
-  <Navigation class="navbar-mobile" />
+  <input type="checkbox" id="mobile-menu-toggle" />
+  <div id="mobile-menu">
+    <label for="mobile-menu-toggle" id="button-label"></label>
+    <Navigation class="navbar-mobile" />
+  </div>
+  <label for="mobile-menu-toggle">
+    <Hamburger class="hamburger" />
+  </label>
 </div>
-<label for="mobile-menu-toggle" class={className} {...rest}>
-  <Hamburger class="hamburger" />
-</label>
 
 <style>
   input {
@@ -22,24 +24,24 @@ const { class: className, ...rest } = Astro.props;
     position: absolute;
     width: 100%;
     height: 100%;
-    visibility: hidden;
     border: none;
     padding: 0;
     inset: 0;
+    z-index: -1;
   }
 
-  #mobile-menu-toggle:not(:checked) ~ div {
+  #mobile-menu-toggle:not(:checked) ~ #mobile-menu {
     display: none;
   }
 
   .navbar-mobile {
     flex-direction: column;
+    background-color: color-mix(in srgb, var(--bg-color-1) 80%, transparent);
   }
 
-  div {
+  #mobile-menu {
     position: fixed;
     inset: 0;
-    background-color: var(--bg-color-1);
-    opacity: 0.8;
+    backdrop-filter: blur(8px);
   }
 </style>
