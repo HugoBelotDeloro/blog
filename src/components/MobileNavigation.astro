@@ -45,3 +45,8 @@ const { class: className, ...rest } = Astro.props;
     backdrop-filter: blur(8px);
   }
 </style>
+<style is:global>
+  body:has(#mobile-menu-toggle:checked) {
+    overflow: hidden;
+  }
+</style>
