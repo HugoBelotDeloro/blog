@@ -53,10 +53,13 @@ const readingTime = remarkPluginFrontmatter.readingTime;
   @media screen and (min-width: 2000px) {
     .toc {
       position: fixed;
-      left: 1rem;
+      grid-column: 1;
       overflow: scroll;
-      top: 10vh;
-      max-height: 80vh;
+      top: calc(1.5rem + 30px);
+      left: calc((100vw - min(65ch, 100vw)) / 4);
+      translate: -50%;
+      max-width: fit-content;
+      max-height: calc(100vh - 1.2rem - 40px);
     }
   }
 
