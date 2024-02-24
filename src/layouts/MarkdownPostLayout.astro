@@ -50,23 +50,19 @@ const readingTime = remarkPluginFrontmatter.readingTime;
 </FullBleedLayout>
 
 <style>
-  @media screen and (min-width: 2000px) {
+  @media screen and not (min-width: calc(636px + (90ch))) {
     .toc {
-      position: fixed;
-      grid-column: 1;
-      overflow: scroll;
-      top: calc(1.5rem + 30px);
-      left: calc((100vw - min(65ch, 100vw)) / 4);
-      translate: -50%;
-      max-width: fit-content;
-      max-height: calc(100vh - 1.2rem - 40px);
+      display: none;
     }
   }
 
   .toc {
-    display: inline-block;
-    background-color: var(--bg-color-2);
-    border-radius: 1em;
-    padding: 1em;
+    position: fixed;
+    overflow: scroll;
+    top: calc(1.5rem + 30px);
+    left: calc((100vw - min(65ch, 100vw)) / 4);
+    translate: -50%;
+    max-width: 45ch;
+    max-height: calc(100vh - 1.2rem - 40px);
   }
 </style>
