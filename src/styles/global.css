@@ -47,3 +47,14 @@ a {
   text-decoration: none;
   color: var(--text-color-link);
 }
+
+  .external-link::after {
+    content: "";
+    mask-size: cover;
+    mask-image: url("/public/external-link.svg");
+    width: 1em;
+    height: 1em;
+    margin-inline: 0.25em;
+    background-color: var(--text-color-link);
+    display: inline-block;
+  }

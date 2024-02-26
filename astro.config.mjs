@@ -17,7 +17,14 @@ export default defineConfig({
       rehypeKatex,
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: "wrap" }],
-      [rehypeExternalLinks, { content: { type: "text", value: " 🔗" } }],
+      [
+        rehypeExternalLinks,
+        {
+          properties: {
+            className: "external-link",
+          },
+        },
+      ],
     ],
   },
 });
