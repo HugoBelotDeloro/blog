@@ -55,6 +55,6 @@ a {
     width: 1em;
     height: 1em;
     margin-inline: 0.25em;
-    background-color: var(--text-color-link);
+    background-color: currentcolor;
     display: inline-block;
   }
