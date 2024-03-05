@@ -8,7 +8,7 @@ import {
 export async function getAllPostsSorted() {
   const posts: CollectionEntry<"posts">[] = await getCollection(
     "posts",
-    (post) => post.data.draft !== true,
+    (post) => import.meta.env.DEV || post.data.draft !== true
   );
 
   return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
