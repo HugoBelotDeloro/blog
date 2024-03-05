@@ -11,6 +11,13 @@ html {
   background-color: var(--bg-color-1);
   color: var(--text-color-1);
   font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 636px) {
+  html {
+    scroll-padding-top: calc(1.2rem + 40px);
+  }
 }
 
 #main {
@@ -36,6 +43,10 @@ h6 {
   margin: 1rem 0 0.5rem;
 }
 
+.heading {
+  color: var(--text-color-heading);
+}
+
 p {
   margin: 0.5rem 0;
 }
@@ -59,6 +70,22 @@ a {
   background-color: currentcolor;
   display: inline-block;
 }
+
+.heading-link {
+  opacity: 0;
+  mask-size: cover;
+  mask-image: url("/link.svg");
+  width: 1em;
+  height: 1em;
+  margin-inline: 0.25em;
+  background-color: var(--text-color-heading);
+  display: inline-block;
+}
+
+.heading:hover > a > .heading-link {
+  opacity: initial;
+}
+
 .blue {
   color: var(--color-blue);
 }

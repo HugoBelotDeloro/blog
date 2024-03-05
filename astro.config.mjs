@@ -16,7 +16,20 @@ export default defineConfig({
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: "wrap" }],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          content: {
+            type: "element",
+            tagName: "span",
+            properties: {
+              className: "heading-link",
+            },
+          },
+          headingProperties: { class: "heading" },
+        },
+      ],
       [
         rehypeExternalLinks,
         {
