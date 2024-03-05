@@ -1,0 +1,25 @@
+---
+
+---
+
+<input id="dark-mode-toggle" type="checkbox" />
+<style>
+  * {
+    display: none;
+  }
+</style>
+<script is:inline>
+  let storedPreference = window.localStorage.getItem("preferred-color-scheme");
+  let prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
+  console.log(`storedPreference: ${storedPreference}`);
+  console.log(`prefersDarkMode: ${prefersDarkMode}`);
+
+  if (
+    storedPreference === "dark" ||
+    (storedPreference === null && prefersDarkMode)
+  ) {
+    document.getElementById("dark-mode-toggle").checked = prefersDarkMode;
+  }
+</script>

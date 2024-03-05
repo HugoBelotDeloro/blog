@@ -1,4 +1,4 @@
-html[data-style="void"] {
+html[data-style="void"]:has(#dark-mode-toggle:checked) {
   --bg-color-1: #262334;
   --text-color-1: #d8f5f9;
   --bg-color-2: #2d4470;
@@ -8,7 +8,7 @@ html[data-style="void"] {
   --text-color-faded: gray;
 }
 
-html[data-style="void"]:has(#dark-mode-toggle:checked) {
+html[data-style="void"] {
   --bg-color-1: white;
   --text-color-1: black;
   --bg-color-2: lightgray;

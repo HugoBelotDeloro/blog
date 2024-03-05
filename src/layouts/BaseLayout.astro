@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PreRender from "../components/PreRender.astro";
 import "../styles/reset.css";
 import "../styles/global.css";
 
@@ -23,6 +24,7 @@ const css_debug = false;
     {css_debug && <link rel="stylesheet" href="/styles/debug.css" />}
   </head>
   <body>
+    <PreRender />
     <Header />
     {
       disableMainElement ? (
