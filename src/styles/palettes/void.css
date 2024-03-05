@@ -8,6 +8,16 @@ html[data-style="void"] {
   --text-color-faded: gray;
 }
 
+html[data-style="void"]:has(#dark-mode-toggle:checked) {
+  --bg-color-1: white;
+  --text-color-1: black;
+  --bg-color-2: lightgray;
+  --text-color-2: #3c72c5;
+  --text-color-link: #69bbea;
+  --shadow-color: gray;
+  --text-color-faded: gray;
+}
+
 html[data-style="void2"] {
   --bg-color-1: #2f2c40;
   --text-color-1: #63bbf2;

@@ -17,6 +17,11 @@ const { class: className, ...rest } = Astro.props;
   <a href="/rss.xml">
     <Icon name="feather:rss" />
   </a>
+  <input id="dark-mode-toggle" type="checkbox"/>
+  <label for="dark-mode-toggle">
+    <Icon name="feather:sun" />
+    <Icon name="feather:moon" />
+  </label>
 </nav>
 
 <style>
@@ -50,5 +55,11 @@ const { class: className, ...rest } = Astro.props;
   nav a:focus {
     color: var(--bg-color-2);
     background-color: var(--text-color-link);
+  }
+
+  #dark-mode-toggle,
+  #dark-mode-toggle:checked ~ label [data-icon="feather:moon"],
+  #dark-mode-toggle:not(:checked) ~ label [data-icon="feather:sun"] {
+    display: none;
   }
 </style>
