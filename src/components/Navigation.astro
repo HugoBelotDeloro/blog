@@ -8,16 +8,19 @@ const { class: className, ...rest } = Astro.props;
   <a href="/">Iridescent dreams</a>
   <a href="/blog/">Blog</a>
   <a href="/tags/">Tags</a>
-  <a href="https://github.com/HugoBelotDeloro">
+  <a href="https://github.com/HugoBelotDeloro" aria-label="GitHub">
     <Icon name="feather:github" />
   </a>
-  <a href="https://www.linkedin.com/in/hugo-belot-deloro/">
+  <a
+    href="https://www.linkedin.com/in/hugo-belot-deloro/"
+    aria-label="LinkedIn"
+  >
     <Icon name="feather:linkedin" />
   </a>
-  <a href="/rss.xml">
+  <a href="/rss.xml" aria-label="RSS">
     <Icon name="feather:rss" />
   </a>
-  <label for="dark-mode-toggle">
+  <label for="dark-mode-toggle" aria-label="Dark mode toggle">
     <Icon name="feather:sun" />
     <Icon name="feather:moon" />
   </label>
