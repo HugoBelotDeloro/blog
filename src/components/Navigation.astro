@@ -50,10 +50,15 @@ const { class: className, ...rest } = Astro.props;
     text-transform: uppercase;
   }
 
-  nav a:hover,
-  nav a:focus {
-    color: var(--bg-color-2);
+  nav *:hover,
+  nav *:focus {
+    color: var(--bg-color-1);
     background-color: var(--text-color-link);
+  }
+
+  label {
+    cursor:pointer;
+    color: var(--text-color-link)
   }
 
   html:has(#dark-mode-toggle:checked) label [data-icon="feather:sun"],
