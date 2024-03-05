@@ -9,7 +9,7 @@
 html {
   background-color: var(--bg-color-1);
   color: var(--text-color-1);
-  font-family: sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #main {
