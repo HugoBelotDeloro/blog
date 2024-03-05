@@ -5,6 +5,7 @@
 @import "palettes/void.css";
 @import "palettes/wanderer.css";
 @import "palettes/wisp.css";
+@import "palettes/term.css";
 
 html {
   background-color: var(--bg-color-1);
@@ -57,4 +58,19 @@ a {
   margin-inline: 0.25em;
   background-color: currentcolor;
   display: inline-block;
+}
+.blue {
+  color: var(--color-blue);
+}
+
+.green {
+  color: var(--color-green);
+}
+
+.magenta {
+  color: var(--color-magenta);
+}
+
+.red {
+  color: var(--color-red);
 }

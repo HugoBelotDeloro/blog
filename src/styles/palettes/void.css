@@ -4,7 +4,6 @@ html[data-style="void"]:has(#dark-mode-toggle:checked) {
   --bg-color-2: #2d4470;
   --text-color-2: #3c72c5;
   --text-color-link: #69bbea;
-  --shadow-color: gray;
   --text-color-faded: gray;
 }
 
@@ -14,7 +13,6 @@ html[data-style="void"] {
   --bg-color-2: lightgray;
   --text-color-2: #3c72c5;
   --text-color-link: #69bbea;
-  --shadow-color: gray;
   --text-color-faded: gray;
 }
 
@@ -24,6 +22,5 @@ html[data-style="void2"] {
   --bg-color-2: #3b74bf;
   --text-color-2: #d8f2f0;
   --text-color-link: #94f2f2;
-  --shadow-color: gray;
   --text-color-faded: gray;
 }

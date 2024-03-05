@@ -13,7 +13,7 @@
   document
     .getElementById("dark-mode-toggle")
     ?.addEventListener("change", (event) => {
-      // @ts-ignore
+      // @ts-expect-error Property 'checked' does not exist on type 'EventTarget'. ts(2339)
       if (event.target?.checked) {
         window.localStorage.setItem("preferred-color-scheme", "dark");
       } else {

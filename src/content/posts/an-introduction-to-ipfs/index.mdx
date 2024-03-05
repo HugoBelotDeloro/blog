@@ -137,11 +137,11 @@ Therefore, it is crucial for IPFS (which uses cryptographic hashes for many appl
 The _multihash_ format aims to solve this issue by storing a code representing a hash function alongside the hash.
 The format of a multihash is as follow:
 
-\<<span className="purple">hash-func-type</span>>\<<span className="green">digest-length</span>>\<<span className="blue">digest-value</span>>
+\<<span className="magenta">hash-func-type</span>>\<<span className="green">digest-length</span>>\<<span className="blue">digest-value</span>>
 
 with:
 
-- <span className="purple">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
+- <span className="magenta">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
   an unsigned integer of variable size (wait until the next section for more details)
   which identifies a hash function by its index in a predefined table. The [multicodec
   table](https://github.com/multiformats/multicodec/blob/master/table.csv) is the
@@ -150,7 +150,7 @@ with:
   the length of the hash, in bytes.
 - <span className="blue">digest-value</span> (hash): the hash itself.
 
-For example <span className="">12</span><span className="green">20</span><span className="blue">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
+For example <span className="magenta">12</span><span className="green">20</span><span className="blue">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
 
 ### Unsigned varint
 
@@ -219,11 +219,11 @@ There are currently two types of CIDs as well as a special human-readable format
 
 The _human-readable form_ of a CID looks like this:
 
-\<<span className="purple">hr-mbc</span>>-\<<span className="green">hr-cid-version</span>>-\<<span className="blue">hr-mc</span>>-\<<span className="red">hr-mh</span>>
+\<<span className="magenta">hr-mbc</span>>-\<<span className="green">hr-cid-version</span>>-\<<span className="blue">hr-mc</span>>-\<<span className="red">hr-mh</span>>
 
 with:
 
-- <span className="purple">hr-mbc</span>: the multibase code
+- <span className="magenta">hr-mbc</span>: the multibase code
 - <span className="green">hr-cid-version</span>: the CID version
 - <span className="blue">hr-mc</span>: the multicodec code for the multihash's
   encoding
@@ -242,12 +242,12 @@ For example, `QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU` is a CIDv0 multiha
 CIDv1, in contrast, is the first version of the CID standard which includes a version number, allowing the standard to evolve further.
 It follows the format:
 
-\<<span className="purple">mb-prefix</span>>\<<span className="green">cid-version</span>>\<<span className="blue">mc-ct</span>>\<<span className="red">mh-ca</span>>
+\<<span className="magenta">mb-prefix</span>>\<<span className="green">cid-version</span>>\<<span className="blue">mc-ct</span>>\<<span className="red">mh-ca</span>>
 
 with:
 
-- <span className="purple">mb-prefix</span> ([multibase code](#multibase)): the multibase
-  prefix
+- <span className="magenta">mb-prefix</span> ([multibase code](#multibase)): the
+  multibase prefix
 - <span className="green">cid-version</span> ([unsigned varint](#unsigned-varint)):
   the CID version (here 1)
 - <span className="blue">mc-ct</span> ([multicodec code](#multicodec)): the format
