@@ -56,9 +56,8 @@ const { class: className, ...rest } = Astro.props;
     background-color: var(--text-color-link);
   }
 
-  #dark-mode-toggle,
-  #dark-mode-toggle:checked ~ label [data-icon="feather:moon"],
-  #dark-mode-toggle:not(:checked) ~ label [data-icon="feather:sun"] {
+  html:has(#dark-mode-toggle:checked) label [data-icon="feather:sun"],
+  html:has(#dark-mode-toggle:not(:checked)) label [data-icon="feather:moon"] {
     display: none;
   }
 </style>
