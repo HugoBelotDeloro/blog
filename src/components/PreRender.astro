@@ -8,13 +8,25 @@
     display: none;
   }
 </style>
+
+<script>
+  document
+    .getElementById("dark-mode-toggle")
+    ?.addEventListener("change", (event) => {
+      // @ts-ignore
+      if (event.target?.checked) {
+        window.localStorage.setItem("preferred-color-scheme", "dark");
+      } else {
+        window.localStorage.setItem("preferred-color-scheme", "light");
+      }
+    });
+</script>
+
 <script is:inline>
   let storedPreference = window.localStorage.getItem("preferred-color-scheme");
   let prefersDarkMode = window.matchMedia(
     "(prefers-color-scheme: dark)",
   ).matches;
-  console.log(`storedPreference: ${storedPreference}`);
-  console.log(`prefersDarkMode: ${prefersDarkMode}`);
 
   if (
     storedPreference === "dark" ||
