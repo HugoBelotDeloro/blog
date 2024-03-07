@@ -1,14 +1,13 @@
 ---
-import TagLinks from "../../components/TagLinks.astro";
+import PostLinks from "../../components/PostLinks.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../../lib/posts";
 
 const allPosts = await getAllPostsSorted();
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
-const pageTitle = "Tags Index";
+const pageTitle = "Posts Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Tags</h1>
-  <TagLinks tags={tags} />
+  <h1>Posts</h1>
+  <PostLinks posts={allPosts} />
 </BaseLayout>
