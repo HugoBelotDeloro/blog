@@ -1,5 +1,6 @@
 ---
 import "@fontsource/ubuntu";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import PreRender from "../components/PreRender.astro";
 import "../styles/global.css";
@@ -29,6 +30,7 @@ const css_debug = false;
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
@@ -40,10 +42,9 @@ const css_debug = false;
   }
 
   main {
-    margin: 0 auto;
+    margin-inline: auto;
     width: 100%;
     max-width: 60ch;
     padding: 1rem;
-    flex-grow: 1;
   }
 </style>
