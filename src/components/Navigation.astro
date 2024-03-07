@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { links } from "../lib/links";
 
 const { class: className, ...rest } = Astro.props;
 ---
@@ -8,13 +9,10 @@ const { class: className, ...rest } = Astro.props;
   <a href="/">Iridescent dreams</a>
   <a href="/posts/">Posts</a>
   <a href="/tags/">Tags</a>
-  <a href="https://github.com/HugoBelotDeloro" aria-label="GitHub">
+  <a href={links.github} aria-label="GitHub">
     <Icon name="feather:github" />
   </a>
-  <a
-    href="https://www.linkedin.com/in/hugo-belot-deloro/"
-    aria-label="LinkedIn"
-  >
+  <a href={links.linkedin} aria-label="LinkedIn">
     <Icon name="feather:linkedin" />
   </a>
   <a href="/rss.xml" aria-label="RSS">

@@ -251,8 +251,8 @@ with:
   the CID version (here 1)
 - <span className="accent">mc-ct</span> ([multicodec code](#multicodec)): the format
   of the data referred to by the CID
-- <span className="accent-4">mh-ca</span> ([multihash](#multihash)): the hash of the referred
-  data.
+- <span className="accent-4">mh-ca</span> ([multihash](#multihash)): the hash of
+  the referred data.
 
 So when you try to decode a CID, you first check if the format matches the CIDv0 format and then if it does then you implicitly know the encoding.
 Otherwise you read the base prefix to know how the rest of the data in encoded.
