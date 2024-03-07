@@ -8,13 +8,11 @@ interface Props {
 const { pageTitle } = Astro.props;
 ---
 
-<BaseLayout {pageTitle} disableMainElement>
-  <main>
-    <slot />
-  </main>
+<BaseLayout {pageTitle}>
+  <slot />
 </BaseLayout>
 
-<style>
+<style is:global>
   main {
     display: grid;
     grid-template-columns:
@@ -22,8 +20,7 @@ const { pageTitle } = Astro.props;
       min(65ch, 100%)
       1fr;
   }
-</style>
-<style is:global>
+
   main > * {
     grid-column: 2;
   }

@@ -13,13 +13,6 @@ html {
   }
 }
 
-#main {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 60ch;
-  padding: 1rem;
-}
-
 h1 {
   margin: 2rem 0;
   font-size: 2.5rem;
