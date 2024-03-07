@@ -12,7 +12,6 @@ import IPFSLogo from "./IPFS_logo.svg";
 import MetadataOnlyNetwork from "./metadata_only_network.png";
 import NetworkDegree from "./network-degree.png";
 import PeersSubscription from "./peers_subscription.png";
-import "./style.css";
 import TypesOfPeering from "./types_of_peering.png";
 
 Note: as the title might suggest, this article is a bit heavy on acronyms. There is a glossary at the end though, in case you need a refresher on some terms.
@@ -137,20 +136,20 @@ Therefore, it is crucial for IPFS (which uses cryptographic hashes for many appl
 The _multihash_ format aims to solve this issue by storing a code representing a hash function alongside the hash.
 The format of a multihash is as follow:
 
-\<<span className="magenta">hash-func-type</span>>\<<span className="green">digest-length</span>>\<<span className="blue">digest-value</span>>
+\<<span className="accent-3">hash-func-type</span>>\<<span className="accent-2">digest-length</span>>\<<span className="accent">digest-value</span>>
 
 with:
 
-- <span className="magenta">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
+- <span className="accent-3">hash-func-type</span> ([unsigned variable integer](#unsigned-varint)):
   an unsigned integer of variable size (wait until the next section for more details)
   which identifies a hash function by its index in a predefined table. The [multicodec
   table](https://github.com/multiformats/multicodec/blob/master/table.csv) is the
   default table, but you can specify another one yourself.
-- <span className="green">digest-length</span> ([unsigned variable integer](#unsigned-varint)):
+- <span className="accent-2">digest-length</span> ([unsigned variable integer](#unsigned-varint)):
   the length of the hash, in bytes.
-- <span className="blue">digest-value</span> (hash): the hash itself.
+- <span className="accent">digest-value</span> (hash): the hash itself.
 
-For example <span className="magenta">12</span><span className="green">20</span><span className="blue">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
+For example <span className="accent-3">12</span><span className="accent-2">20</span><span className="accent">41dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8</span> is a sha2-256 hash with a length of 32 bytes.
 
 ### Unsigned varint
 
@@ -219,15 +218,15 @@ There are currently two types of CIDs as well as a special human-readable format
 
 The _human-readable form_ of a CID looks like this:
 
-\<<span className="magenta">hr-mbc</span>>-\<<span className="green">hr-cid-version</span>>-\<<span className="blue">hr-mc</span>>-\<<span className="red">hr-mh</span>>
+\<<span className="accent-3">hr-mbc</span>>-\<<span className="accent-2">hr-cid-version</span>>-\<<span className="accent">hr-mc</span>>-\<<span className="accent-4">hr-mh</span>>
 
 with:
 
-- <span className="magenta">hr-mbc</span>: the multibase code
-- <span className="green">hr-cid-version</span>: the CID version
-- <span className="blue">hr-mc</span>: the multicodec code for the multihash's
+- <span className="accent-3">hr-mbc</span>: the multibase code
+- <span className="accent-2">hr-cid-version</span>: the CID version
+- <span className="accent">hr-mc</span>: the multicodec code for the multihash's
   encoding
-- <span className="red">hr-mh</span>: the multihash Obviously each of these
+- <span className="accent-4">hr-mh</span>: the multihash Obviously each of these
   components must be in a human-readable format themselves.
 
 #### CIDv0
@@ -242,17 +241,17 @@ For example, `QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU` is a CIDv0 multiha
 CIDv1, in contrast, is the first version of the CID standard which includes a version number, allowing the standard to evolve further.
 It follows the format:
 
-\<<span className="magenta">mb-prefix</span>>\<<span className="green">cid-version</span>>\<<span className="blue">mc-ct</span>>\<<span className="red">mh-ca</span>>
+\<<span className="accent-3">mb-prefix</span>>\<<span className="accent-2">cid-version</span>>\<<span className="accent">mc-ct</span>>\<<span className="accent-4">mh-ca</span>>
 
 with:
 
-- <span className="magenta">mb-prefix</span> ([multibase code](#multibase)): the
+- <span className="accent-3">mb-prefix</span> ([multibase code](#multibase)): the
   multibase prefix
-- <span className="green">cid-version</span> ([unsigned varint](#unsigned-varint)):
+- <span className="accent-2">cid-version</span> ([unsigned varint](#unsigned-varint)):
   the CID version (here 1)
-- <span className="blue">mc-ct</span> ([multicodec code](#multicodec)): the format
+- <span className="accent">mc-ct</span> ([multicodec code](#multicodec)): the format
   of the data referred to by the CID
-- <span className="red">mh-ca</span> ([multihash](#multihash)): the hash of the referred
+- <span className="accent-4">mh-ca</span> ([multihash](#multihash)): the hash of the referred
   data.
 
 So when you try to decode a CID, you first check if the format matches the CIDv0 format and then if it does then you implicitly know the encoding.

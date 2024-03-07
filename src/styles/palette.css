@@ -1,0 +1,25 @@
+html[data-style="term"]:has(#dark-mode-toggle:checked) {
+  --color-bg: #2c2c2c;
+  --color-bg-2: #1c1c1c;
+  --color-text: #d6d6d6;
+  --color-link: #7eaac7;
+  --color-faded: #636363;
+  --color-heading: #ebc17a;
+  --color-accent: #86d3ce;
+  --color-accent-2: #909d63;
+  --color-accent-3: #aa6292;
+  --color-accent-4: #bc5653;
+}
+
+html[data-style="term"] {
+  --color-bg: #f7f7f7;
+  --color-bg-2: #cacaca;
+  --color-text: #2c2c2c;
+  --color-link: #4591c4;
+  --color-faded: #636363;
+  --color-heading: #e4a434;
+  --color-accent: #86d3ce;
+  --color-accent-2: #66752d;
+  --color-accent-3: #a94788;
+  --color-accent-4: #b6403c;
+}

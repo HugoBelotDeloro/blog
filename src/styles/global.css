@@ -1,15 +1,8 @@
-@import "palettes/base.css";
-@import "palettes/aurelion.css";
-@import "palettes/dark-star.css";
-@import "palettes/obsidian.css";
-@import "palettes/void.css";
-@import "palettes/wanderer.css";
-@import "palettes/wisp.css";
-@import "palettes/term.css";
+@import "palette.css";
 
 html {
-  background-color: var(--bg-color-1);
-  color: var(--text-color-1);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-family: "Ubuntu", sans-serif;
   scroll-behavior: smooth;
 }
@@ -44,7 +37,7 @@ h6 {
 }
 
 .heading {
-  color: var(--text-color-heading);
+  color: var(--color-heading);
 }
 
 p {
@@ -57,7 +50,7 @@ table {
 
 a {
   text-decoration: none;
-  color: var(--text-color-link);
+  color: var(--color-link);
 }
 
 .external-link::after {
@@ -78,7 +71,7 @@ a {
   width: 1em;
   height: 1em;
   margin-inline: 0.25em;
-  background-color: var(--text-color-heading);
+  background-color: var(--color-heading);
   display: inline-block;
 }
 
@@ -86,18 +79,25 @@ a {
   opacity: initial;
 }
 
-.blue {
-  color: var(--color-blue);
+.accent,
+.katex {
+  color: var(--color-accent);
 }
 
-.green {
-  color: var(--color-green);
+.accent-2 {
+  color: var(--color-accent-2);
 }
 
-.magenta {
-  color: var(--color-magenta);
+.accent-3 {
+  color: var(--color-accent-3);
 }
 
-.red {
-  color: var(--color-red);
+.accent-4 {
+  color: var(--color-accent-4);
+}
+
+code {
+  background-color: var(--color-bg-2);
+  padding: 0.5em;
+  border-radius: 0.5em;
 }

@@ -41,7 +41,7 @@ const { class: className, ...rest } = Astro.props;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--bg-color-1);
+    background-color: var(--color-bg);
   }
 
   nav > * {
@@ -55,13 +55,13 @@ const { class: className, ...rest } = Astro.props;
 
   nav *:hover,
   nav *:focus {
-    color: var(--bg-color-1);
-    background-color: var(--text-color-link);
+    color: var(--color-bg);
+    background-color: var(--color-link);
   }
 
   label {
     cursor: pointer;
-    color: var(--text-color-link);
+    color: var(--color-link);
   }
 
   html:has(#dark-mode-toggle:checked) label [data-icon="feather:sun"],
