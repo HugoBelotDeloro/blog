@@ -1,4 +1,4 @@
-html[data-style="term"]:has(#dark-mode-toggle:checked) {
+html:has(#dark-mode-toggle:checked) {
   --color-bg: #2c2c2c;
   --color-bg-2: #1c1c1c;
   --color-text: #d6d6d6;
@@ -11,7 +11,7 @@ html[data-style="term"]:has(#dark-mode-toggle:checked) {
   --color-accent-4: #bc5653;
 }
 
-html[data-style="term"] {
+html {
   --color-bg: #f7f7f7;
   --color-bg-2: #cacaca;
   --color-text: #2c2c2c;
