@@ -30,7 +30,7 @@ const readingTime = remarkPluginFrontmatter.readingTime;
   )
 }
 
-<FullBleedLayout pageTitle={frontmatter.title}>
+<FullBleedLayout title={frontmatter.title} description={post.data.description}>
   <h1>{frontmatter.title}</h1>
   <p>
     Published on

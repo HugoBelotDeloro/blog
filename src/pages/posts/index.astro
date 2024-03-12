@@ -4,10 +4,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../../lib/posts";
 
 const allPosts = await getAllPostsSorted();
-const pageTitle = "Posts Index";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout title="Posts Index">
   <h1>Posts</h1>
   <PostLinks posts={allPosts} />
 </BaseLayout>

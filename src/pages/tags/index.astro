@@ -5,10 +5,9 @@ import { getAllPostsSorted } from "../../lib/posts";
 
 const allPosts = await getAllPostsSorted();
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
-const pageTitle = "Tags Index";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout title="Tags Index">
   <h1>Tags</h1>
   <TagLinks tags={tags} />
 </BaseLayout>

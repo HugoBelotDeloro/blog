@@ -1,16 +1,13 @@
 ---
 import "@fontsource/ubuntu";
+import { SEO, type SEOProps } from "astro-seo";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import PreRender from "../components/PreRender.astro";
 import "../styles/global.css";
 import "../styles/reset.css";
 
-interface Props {
-  pageTitle: string;
-}
-
-const { pageTitle } = Astro.props;
+export type Props = SEOProps & { title: string };
 
 const css_debug = false;
 ---
@@ -18,11 +15,12 @@ const css_debug = false;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <SEO {...Astro.props} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Hugo Belot-Deloro"/>
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
     {css_debug && <link rel="stylesheet" href="/styles/debug.css" />}
   </head>
   <body>
@@ -32,20 +30,18 @@ const css_debug = false;
       <slot />
     </main>
     <Footer />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        margin-inline: auto;
+        width: 100%;
+        max-width: 60ch;
+        padding: 1rem;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  main {
-    margin-inline: auto;
-    width: 100%;
-    max-width: 60ch;
-    padding: 1rem;
-  }
-</style>

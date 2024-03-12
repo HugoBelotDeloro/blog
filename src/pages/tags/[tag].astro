@@ -33,7 +33,7 @@ if (tag === undefined) {
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={`#${tag}`}>
+<BaseLayout title={`#${tag}`}>
   <h1>{tag}</h1>
   <PostLinks {posts} />
 </BaseLayout>

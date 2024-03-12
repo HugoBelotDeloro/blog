@@ -1,14 +1,10 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout, { type Props as BaseProps } from "./BaseLayout.astro";
 
-interface Props {
-  pageTitle: string;
-}
-
-const { pageTitle } = Astro.props;
+export type Props = BaseProps;
 ---
 
-<BaseLayout {pageTitle}>
+<BaseLayout {...Astro.props}>
   <slot />
 </BaseLayout>
 

@@ -3,12 +3,11 @@ import PostLinks from "../components/PostLinks.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllPostsSorted } from "../lib/posts";
 
-const pageTitle = "Iridescent Dreams";
 const posts = await getAllPostsSorted();
 const latestPosts = posts.slice(0, 5);
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout title="Iridescent Dreams">
   <h1>Latest posts:</h1>
   <PostLinks posts={latestPosts} />
 </BaseLayout>
