@@ -9,7 +9,6 @@ import remarkMath from "remark-math";
 import { remarkReadingTime } from "./src/lib/remark-plugins/reading-time";
 
 export default defineConfig({
-  site: "https://hugobelotdeloro.github.io/",
   integrations: [mdx(), icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
