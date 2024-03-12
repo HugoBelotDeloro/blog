@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -9,7 +10,8 @@ import remarkMath from "remark-math";
 import { remarkReadingTime } from "./src/lib/remark-plugins/reading-time";
 
 export default defineConfig({
-  integrations: [mdx(), icon()],
+  site: "https://iridescent.pages.dev/",
+  integrations: [mdx(), icon(), sitemap()],
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [
